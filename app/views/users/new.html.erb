@@ -8,26 +8,5 @@
   <%= f.label :email %>
   <%= f.text_field :email %> <br>
 
-  <%= f.fields_for :personal_items, @user.personal_items.build do |personal_items_fields| %>
-  	<%= f.label :note %>
-    <%= personal_items_fields.text_field :note %>
-    <%= f.label :date_acquired %>
-    <%= personal_items_fields.text_field :date_acquired %>
-    <%= f.label :status %>
-    <%= personal_items_fields.text_field :status %>
-    <%= f.label :item_id %>
-    <%= personal_items_fields.text_field :item_id %>
-     <% end %>
-
-
-  <%= f.fields_for :items, @user.items.build do |items_fields| %>
-  	<%= f.label :name %>
-    <%= items_fields.text_field :name %>
-    <%= f.label :brand %>
-    <%= items_fields.text_field :brand %>
-    <%= f.label :geartype %>
-    <%= items_fields.text_field :geartype %>
-  <% end %>
-
   <%= f.submit 'Signup' %>
 <% end %><br>
