@@ -6,13 +6,13 @@ class Item < ApplicationRecord
 
 # mass assignment
 	def personal_items_attributes=(personal_items_attributes)
-		personal_items_attributes.each do |i, personal_item_attributes|
+		personal_items_attributes.each do |personal_item_attributes|
 			self.personal_items.build(personal_items_attributes)
 		end
 	end
 
 	def users_attributes=(users_attributes)
-		users_attributes.each do |i, users_attributes|
+		users_attributes.each do |users_attributes|
 			self.users.build(users_attributes)
 		end
 	end

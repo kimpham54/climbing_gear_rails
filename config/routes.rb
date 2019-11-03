@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
     resources :users do
     resources :items do
-      resources :personal_items, only: [:new, :create, :edit, :update, :destroy]
-    end
+      resources :personal_items
+  end
   end
 end
