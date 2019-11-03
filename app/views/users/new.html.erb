@@ -1,0 +1,23 @@
+
+<h1>SIGNUP</h1>
+
+<%= form_for @user do |f|%>
+  <%= f.label :name %>
+  <%= f.text_field :name %> <br>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %> <br>
+
+  <%= f.fields_for :personal_items, @user.personal_items.build do |personal_items_fields| %>
+  <%= f.label :note %>
+    <%= personal_items_fields.text_field :note %>
+     <% end %>
+
+
+  <%= f.fields_for :items, @user.items.build do |items_fields| %>
+  <%= f.label :name %>
+    <%= items_fields.text_field :name %>
+  <% end %>
+
+  <%= f.submit 'Signup' %>
+<% end %><br>
