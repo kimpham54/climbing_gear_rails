@@ -1,0 +1,2 @@
+class PersonalItemsController < ApplicationController
+end
