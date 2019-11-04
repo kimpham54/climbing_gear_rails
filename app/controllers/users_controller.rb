@@ -3,7 +3,8 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-    def index
+  def index
+    authenticate
   end
 
   def create
@@ -19,6 +20,7 @@ class UsersController < ApplicationController
   end
 
     def show
+      authenticate
     @user = User.find(params[:id])
     end
 
