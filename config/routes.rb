@@ -5,4 +5,12 @@ Rails.application.routes.draw do
       resources :personal_items
   end
   end
+
+  get "/signup" => "users#new", as: "signup"
+  get "/login" => "sessions#new", as: "login"
+  post "/login" => "sessions#create"
+  # as only for get not delete or post
+  delete "/logout" => "sessions#destroy"
+
+  
 end

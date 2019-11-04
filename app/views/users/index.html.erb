@@ -1,0 +1,8 @@
+<h4>Users: </h4>
+
+<% User.all.each do |user| %>
+
+<%= render partial: "user", locals: {user: user} %>
+
+<br>
+<% end %>
