@@ -4,8 +4,8 @@ class CreatePersonalItems < ActiveRecord::Migration[6.0]
     	t.string :note
     	t.datetime :date_acquired
     	t.string :status
-    	t.integer :item_id
-    	t.integer :user_id
+    	# t.integer :item_id
+    	# t.integer :user_id
     	t.timestamps
         t.belongs_to :item, index:true, foreign_key:true
         t.belongs_to :user, index:true, foreign_key:true

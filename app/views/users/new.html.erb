@@ -1,4 +1,3 @@
-
 <h1>SIGNUP</h1>
 
 <%= form_with model: @user, local: true do |f| %>
@@ -12,7 +11,7 @@
   <br/>
 
   <%= f.label :email %>
-  <%= f.text_field :email %>
+  <%= f.email_field :email %>
   <br/>
 
   <%= f.label :password %>
@@ -27,5 +26,6 @@
         <p><%= msg %></p>
     <% end %>
     <% end %>
+    <!-- raise password errors -->
 
 <% end %>

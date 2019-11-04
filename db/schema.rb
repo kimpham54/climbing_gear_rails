@@ -24,10 +24,12 @@ ActiveRecord::Schema.define(version: 2019_11_03_084925) do
     t.string "note"
     t.datetime "date_acquired"
     t.string "status"
-    t.integer "item_id"
-    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "item_id"
+    t.integer "user_id"
+    t.index ["item_id"], name: "index_personal_items_on_item_id"
+    t.index ["user_id"], name: "index_personal_items_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -37,6 +39,10 @@ ActiveRecord::Schema.define(version: 2019_11_03_084925) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "google_token"
+    t.string "google_refresh_token"
   end
 
+  add_foreign_key "personal_items", "items"
+  add_foreign_key "personal_items", "users"
 end

@@ -21,12 +21,14 @@ class UsersController < ApplicationController
 
     def show
       authenticate
-    @user = User.find(params[:id])
+      @user = User.find(params[:id])
     end
 
   private
 
   def user_params
-    params.require(:user).permit(:username, :name, :email, :password, :personal_items_attributes => [:note, :date_acquired, :status, :item_id, :user_id], :items_attributes => [:name, :brand, :geartype])
+    params.require(:user).permit(:username, :name, :email, :password)
   end
+  # clean up TODO
+  # if nested forms :personal_items_attributes => [:note, :date_acquired, :status, :item_id, :user_id], :items_attributes => [:name, :brand, :geartype]
 end

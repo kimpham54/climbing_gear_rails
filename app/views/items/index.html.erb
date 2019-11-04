@@ -1,0 +1,8 @@
+<h4>All Catalog Items: </h4>
+
+<% Item.all.each do |item| %>
+
+<%= render partial: "item", locals: {item: item} %>
+
+<br>
+<% end %>
