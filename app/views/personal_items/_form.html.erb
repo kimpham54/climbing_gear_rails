@@ -1,1 +1,40 @@
-<!-- not in use -->
+<!-- personal_item local variable instead of @personal_item -->
+<!--  render 'form', personal_item: PersonalItem.new -->
+
+<h1>ADD A PERSONAL ITEM</h1>
+
+<%= form_with model: personal_item, local: true do |f| %>
+
+  <%= f.label :note %>
+  <%= f.text_area :note %>
+  <br/><br/>
+
+  <%= f.label :date_acquired %>
+  <%= f.date_field :date_acquired %>
+  <br/><br/>
+
+  <%= f.label :status %>
+  <%= f.text_field :status %>
+  <br/><br/>
+
+  <%= f.label :item %><br/>
+  <%= f.collection_radio_buttons(:item_id, Item.all, :id, :name) do |b| %> 
+  <%= b.radio_button %> 
+  <%= b.label do %> 
+   <li><%=  b.object.name + " - " + b.object.brand %> </li><br/>
+  <% end %> 
+  <% end %> 
+
+
+  <!-- f.collection_select -->
+
+
+  <br/>
+
+  <%= f.hidden_field :user_id, value: current_user.id %>
+
+  <br/>
+
+  <%= f.submit 'Add' %>
+
+<% end %>

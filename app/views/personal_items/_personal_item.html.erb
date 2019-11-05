@@ -2,6 +2,14 @@
 <h3><%= personal_item.item.name%></h3>
 Brand: <%= personal_item.item.brand %>
 <br/>
-Notes: <%= link_to personal_item.note, personal_item_path(personal_item) %>
-User for test TODO REMOVE: <%= personal_item.user.name %>
+Date acquired: <%= personal_item.date_acquired %>
+<br/>
+Status: <%= personal_item.status %>
+<br/>
+Notes: <%= personal_item.note %>
+<!-- TEST:  personal_item.user.name -->
+<!-- link_to personal_item.note, personal_item_path(personal_item) -->
 </div>
+
+<%= link_to "Edit", edit_personal_item_path(personal_item) %>
+<%= link_to "Delete", personal_item, method: :delete, data: { confirm: "Really?" } %>

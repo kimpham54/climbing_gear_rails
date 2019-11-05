@@ -4,6 +4,7 @@ class CreatePersonalItems < ActiveRecord::Migration[6.0]
     	t.string :note
     	t.datetime :date_acquired
     	t.string :status
+        t.boolean :published
     	# t.integer :item_id
     	# t.integer :user_id
     	t.timestamps

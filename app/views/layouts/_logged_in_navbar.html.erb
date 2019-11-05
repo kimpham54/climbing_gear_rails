@@ -1,5 +1,5 @@
 <%= link_to "User Community", users_path %>
-<%= link_to "View Your Personal Inventory", personal_items_path %>
+<%= link_to "View Your Personal Inventory", user_personal_items_path(current_user) %>
 <%= link_to "Add Personal Item", new_personal_item_path %>
 <%= link_to "View Catalog Items", items_path %>
 <%= button_to "Log Out", "/logout", method: :delete %>

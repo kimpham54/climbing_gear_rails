@@ -3,6 +3,8 @@ class PersonalItem < ApplicationRecord
 	belongs_to :item
 
 	validates :user_id, presence: true
-	validates_uniqueness_of :user_id, :scope => :item_id
+
+  scope :last_updated, -> { order("updated_at desc")}	
+  scope :last_acquired, -> { order("last_acquired desc")}
 
 end

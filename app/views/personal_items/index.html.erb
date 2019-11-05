@@ -1,7 +1,7 @@
 <h4>Your Inventory: </h4>
 
 
-<% PersonalItem.all.each do |personal_item| %>
+<% @personal_items.each do |personal_item| %>
 
 <%= render partial: "personal_item", locals: {personal_item: personal_item} %>
 
