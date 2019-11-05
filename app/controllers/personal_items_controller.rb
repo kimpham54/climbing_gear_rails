@@ -40,6 +40,7 @@ end
   	end
 
   	def edit
+      authorize
       # redirect_to user_personal_items_path(current_user)
   		# get edit form
   	end
