@@ -12,8 +12,13 @@ class PersonalItemsController < ApplicationController
 		# @personal_item = PersonalItem.all
     if params[:user_id]
       # raise params.inspect
+      # binding.pry
       @personal_items = User.find(params[:user_id]).personal_items
-      @personal_items = @personal_items.last_updated 
+      if !params[:limit]
+        @personal_items = @personal_items.last_updated
+      else
+        @personal_items = @personal_items.limitvalue
+      end
       # last_updated scope from model
     else
       @personal_items = PersonalItem.all

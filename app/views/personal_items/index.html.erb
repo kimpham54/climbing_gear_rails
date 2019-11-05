@@ -1,4 +1,5 @@
 <h4>Your Inventory: </h4>
+<%= button_to "Limit 3", user_personal_items_path(current_user), method: :get, params: {limit: 3}%>
 
 
 <% @personal_items.each do |personal_item| %>
