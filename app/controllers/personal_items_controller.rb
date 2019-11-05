@@ -8,7 +8,7 @@ class PersonalItemsController < ApplicationController
 
 	def index
     authenticate
-    authorize # take out TODOKIM if you allow published view
+    authorize
 		# @personal_item = PersonalItem.all
     if params[:user_id]
       # raise params.inspect
@@ -25,7 +25,6 @@ end
     @personal_item = PersonalItem.new(personal_item_params)
     # @personal_item.user = current_user
     # @personal_item.item = @item
-
     if @personal_item.save
       redirect_to user_personal_items_path(current_user) # not personal_items_path
     else
@@ -40,9 +39,6 @@ end
   	end
 
   	def edit
-      authorize
-      # redirect_to user_personal_items_path(current_user)
-  		# get edit form
   	end
 
     def destroy

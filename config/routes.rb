@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
 
     resources :users, only: [:show] do
-      resources :personal_items, only: [:new, :show, :index]
+      resources :personal_items, only: [:new, :show, :index, :edit, :destroy, :update]
     end
 
     resources :personal_items

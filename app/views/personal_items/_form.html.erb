@@ -21,7 +21,7 @@
   <%= f.collection_radio_buttons(:item_id, Item.all, :id, :name) do |b| %> 
   <%= b.radio_button %> 
   <%= b.label do %> 
-   <li><%=  b.object.name + " - " + b.object.brand %> </li><br/>
+   <%=  b.object.name + " - " + b.object.brand %><br/>
   <% end %> 
   <% end %> 
 
