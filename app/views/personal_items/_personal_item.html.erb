@@ -11,5 +11,6 @@ Notes: <%= personal_item.note %>
 <!-- link_to personal_item.note, personal_item_path(personal_item) -->
 </div>
 
-<%= link_to "Edit", edit_personal_item_path(personal_item) %>
+<!-- non authorize link_to "Edit", edit_personal_item_path(personal_item) -->
+<%= link_to "Edit", edit_user_personal_item_path(current_user, personal_item) %>
 <%= link_to "Delete", personal_item, method: :delete, data: { confirm: "Do you really want to remove this item?" } %>

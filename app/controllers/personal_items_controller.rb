@@ -22,9 +22,9 @@ end
 
   def create
     # @item = Item.find(params[:item_id])
-    @personal_item = PersonalItem.new(personal_item_params)
     # @personal_item.user = current_user
     # @personal_item.item = @item
+    @personal_item = PersonalItem.new(personal_item_params)
     if @personal_item.save
       redirect_to user_personal_items_path(current_user) # not personal_items_path
     else
@@ -39,14 +39,18 @@ end
   	end
 
   	def edit
+      authenticate
+      # authorize doesn't work
   	end
 
     def destroy
+      authenticate
       @personal_item.destroy
       redirect_to user_personal_items_path(current_user)
     end
 
     def update
+      authenticate
       @personal_item.update(personal_item_params)
       redirect_to user_personal_items_path(current_user)
       # patch
