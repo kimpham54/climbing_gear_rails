@@ -27,7 +27,7 @@ gem 'pry'
 # gem 'image_processing', '~> 1.2'
 
 # climbing gear app oauth
-gem 'omniauth', '~> 1.6', '>= 1.6.1'
+gem 'omniauth', '~> 1.9'
 gem 'omniauth-google-oauth2', '~> 0.8.0'
 gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 
